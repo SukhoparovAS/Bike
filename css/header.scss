@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
+
+header{
+	display: flex;
+	flex: 1 1 auto;
+	width: 100%;
+	position: relative;
+}
+.menu {
+	display: flex;
+	flex: 1 1 auto;
+	width: 100%;
+	justify-content:center;
+	align-items:center;
+	position: absolute;
+	left: 50%-width;
+	top: 47px+35px;
+
+	&__links {
+		display: flex;
+		a{
+			font-family: 'Lato';
+			font-weight: bold;
+			color: #4d4959;
+			font-size: 13px;
+			text-transform: uppercase;
+			margin: auto 0px;
+			padding: 0 37.5px;
+			&:nth-child(2){
+				padding: 0 110px 0 0px;
+			}
+			&:nth-child(3){
+				padding: 0 0 0 110px;
+			}
+		}
+	}
+}
+.menu__logo{
+transform: translate(-50%,0);
+position: absolute;
+left: 50%;
+}
+
+
+@media (max-width: 620px) {
+	.menu__links{
+		display: flex;
+		flex-direction:column;
+		align-items:center;
+		//background-color: #FFF;
+
+		a{
+			color: #fff;
+			text-shadow: 1px 1px 5px #000,1px 1px 0px #000;
+			display:block;
+			padding: 17.5px 0;
+			margin: 0;
+			&:nth-child(2){
+				padding: 17.5px 0;
+			}
+			&:nth-child(3){
+				padding: 17.5px 0;
+			}
+			&:nth-child(1){
+				padding-top: 67.5px;
+			}
+		}
+	}
+	.menu__logo{
+transform: translate(-50%,-50%);
+position: absolute;
+top: 0;
+left: 50%;
+	}
+}
+.brands {
+
+	&__row {
+		display: flex;
+	}
+	&__column--b {
+		position: relative;
+	}
+	&__item {}
+	&__column {}
+	&__contant {}
+}
+.item {
+	&__logo {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+	}
+	&__img {}
+}
+.block {
+	&__icon {}
+	&__title {}
+	&__text {}
+	&__image {}
+}
