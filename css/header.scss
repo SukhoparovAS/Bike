@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
 
-header{
+.header{
 	display: flex;
 	flex: 1 1 auto;
 	width: 100%;
-	position: relative;
 }
 .menu {
 	display: flex;
@@ -13,8 +12,8 @@ header{
 	justify-content:center;
 	align-items:center;
 	position: absolute;
-	left: 50%-width;
-	top: 47px+35px;
+	left: 0;
+	top: 25px+35px;
 
 	&__links {
 		display: flex;
@@ -32,70 +31,120 @@ header{
 			&:nth-child(3){
 				padding: 0 0 0 110px;
 			}
+			&:hover{
+				text-shadow: 1px 1px 5px #000,1px 1px 0px #000;
+				//color: #000;
+			}
 		}
 	}
 }
-.menu__logo{
-transform: translate(-50%,0);
-position: absolute;
-left: 50%;
+.header__logo{
+	transform: translate(-50%,0);
+	position: absolute;
+	left: 50%;
+	top: 25px;
 }
-
-
 @media (max-width: 620px) {
+	.burger {
+		position: absolute;
+		z-index: 3;
+		width: 30px;
+		height: 20px;
+		right: 20px;
+		top: 20px;
+		&:before{
+			content: "";
+			display: block;
+			width: 30px;
+			height: 3px;
+			background-color: #000;
+			margin-bottom: 4px;
+			transition: all 0.3s ease 0s;
+		}
+		span{
+			display: block;
+			width: 30px;
+			height: 3px;
+			background-color: #000;
+			margin-bottom: 4px;
+			transition: all 0.3s ease 0s;
+		}
+		&:after{
+			content: "";
+			display: block;
+			width: 30px;
+			height: 3px;
+			background-color: #000;
+			transition: all 0.3s ease 0s;
+		}
+	}
+	.burger.active{
+		&:before{
+			transform:rotate(45deg);
+			position: absolute;
+			top: 8px;
+		}
+		&:after{
+			transform:rotate(-45deg);
+			position: absolute;
+			bottom: 10px;
+		}
+		span{
+			opacity: 0;
+		}
+	}
+	.menu {
+		display: flex;
+		align-items: flex-start;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: -100%;
+		background-color: gray;
+	}
+	.menu {
+		display: flex;
+		align-items: flex-start;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: -100%;
+		background-color: rgba(243, 244, 250, 0.7);
+		transition: all 0.3s ease 0s;
+	}
+	.menu.active{
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
 	.menu__links{
 		display: flex;
 		flex-direction:column;
 		align-items:center;
-		//background-color: #FFF;
-
+		margin-top: 50px;
 		a{
-			color: #fff;
-			text-shadow: 1px 1px 5px #000,1px 1px 0px #000;
 			display:block;
-			padding: 17.5px 0;
+			padding: 10px 0;
 			margin: 0;
+			font-size: 	20px;
 			&:nth-child(2){
-				padding: 17.5px 0;
+				padding: 10px 0;
 			}
 			&:nth-child(3){
-				padding: 17.5px 0;
+				padding: 10px 0;
 			}
 			&:nth-child(1){
 				padding-top: 67.5px;
 			}
+			&:last-child{
+				margin-bottom: 30px;
+			}
 		}
 	}
-	.menu__logo{
-transform: translate(-50%,-50%);
-position: absolute;
-top: 0;
-left: 50%;
-	}
-}
-.brands {
-
-	&__row {
-		display: flex;
-	}
-	&__column--b {
-		position: relative;
-	}
-	&__item {}
-	&__column {}
-	&__contant {}
-}
-.item {
-	&__logo {
+	.header__logo{
+		transform: translate(-50%,-50%);
 		position: absolute;
+		top: 60px;
 		left: 50%;
-		top: 50%;
 	}
-	&__img {}
-}
-.block {
-	&__icon {}
-	&__title {}
-	&__text {}
-	&__image {}
 }
